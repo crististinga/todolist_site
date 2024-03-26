@@ -11,14 +11,13 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 // Database
-mongoose.connect("mongodb+srv://stingacristian:yvahaHi7sp3T8vKN@cluster0.wnyr4wr.mongodb.net/todolistDB?retryWrites=true&w=majority&appName=Cluster0", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-}).then(() => {
-    console.log("Connected to MongoDB");
-}).catch((err) => {
-    console.error("Error connecting to MongoDB:", err);
-});
+mongoose.connect("mongodb+srv://stingacristian:yvahaHi7sp3T8vKN@cluster0.wnyr4wr.mongodb.net/todolistDB?retryWrites=true&w=majority&appName=Cluster0")
+    .then(() => {
+        console.log("Connected to MongoDB");
+    })
+    .catch((err) => {
+        console.error("Error connecting to MongoDB:", err);
+    });
 
 const itemsSchema = {
     name: String
